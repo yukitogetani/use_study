@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<input class="test" type="text">
+	<span id="length"></span>
+	<span id="caret"></span>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script>
+
+	$(function() {
+		
+		//文字に変更があった時に最大文字数を取得する。
+		$(".test").bind("keydown keypress change",function() {
+			//キャレットの位置取得
+			var testcaret = $(".test").selectionStart;
+			console.log(testcaret);
+			$("#caret").text(testcaret)
+			//限界文字数の設定
+			var limitLength = 10;
+			var length = $(this).val().length;
+			
+			//リアルタイムに表示する。
+			var lengthtext = "現在の文字数は"+ length +"文字";
+			$("#length").text(lengthtext);
+
+			//最大文字数を超えたら超えた分だけを赤くする。
+			if(length > limitLength) {
+				$("#length").css("color","#f00");
+			} else {
+				$("#length").css("color","#000");
+			}
+		});
+	});
+	</script>
+	</body>
+</html>
