@@ -23,56 +23,59 @@
 	<p class="editableText">編集を行う場合はテキストをダブルクリックしてください</p>
 	<p class="editableText">１</p>
 	<p class="editableText">２</p>
+	<p class="editableText">３<span>aaa</span></p>
 	<p class="editableText">３</p>
 	<p class="editableText">３</p>
-	<p class="editableText">３</p>
-	<p class="editableText">３</p>
+	<p class="koitu">３</p>
     <h1 id="editText">テキスト編集用ボックス</h1>
     <input id="textEditBox" type="text">
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script>
-  function TextBoxUtility(target,limit){
-    this.target = target;
-    
-    if(!limit){
-      limit = 10;
+  function TextBoxUtility(option){
+
+    //デフォルトオプションの定義
+    var defaultOption = {
+      "edit" : ".editableText",
+      "limit"    : ".isLimit",
+      "limitNum" : 10
     }
-    this.limit = limit;
-  }
+    //オプションの設定
+    for( var key in defaultOption ){
+    
+      //受け取ったオプションに正しいオプションがあったら
+      if(option[key]){
+        //受け取ったオプションを設定
+        this[key] = option[key];
+      }else{
+        //なければデフォルトオプションを設定
+        this[key] = defaultOption[key];
+      }
+    }
+  }//コンストラクタend
   
-	//editableメソッド
-	TextBoxUtility.prototype.editable = function() {
-		var $target;
-		var $editBox = $("#textEditBox");
-		//ダブルクリック時、テキストのデータを取得し、テキストエリアに表示。
-		$(this.target).dblclick(function() {
-			$target = $(this)
-			$("#editText").show();
-			$editBox.show().val($target.text()).focus();
-		});
-		//エンターを押した時テキストエリアのデータを取得し、テキストに表示する。
-		$editBox.keypress(function(e) {
-			if ( e.which == 13 ) {
-				var editedData = $editBox.val();
-				if(window.confirm("変更後：\n"+editedData+"\n\n反映しますか？")){
-					$($target).text(editedData);
-					$("#editText").hide();
-					$editBox.hide();
-				}
-			}
-		});
-		//フォーカス外れたとき編集ボックスを消す。
-		$editBox.blur(function() {
-			$("#editText").hide();
-			$editBox.hide();
-		});
-	}
+  //editableメソッド
+  TextBoxUtility.prototype.editable = function() {
+    $(this["edit"]).on("dblclick",function(){
+      var $this = $(this);
+      var text = $this.text();
+      var $editBox = $('<input type="text">');
+      $editBox.val(text);
+      setTimeout(function(){
+          $editBox.focus();
+      }, 0);
+      $this.text("").append($editBox);
+      $editBox.on("blur change",function(e){
+        $this.text($editBox.val());
+      });
+      
+    });
+  }
   
   //初期化、表示エリアを設定する。
   TextBoxUtility.prototype.checkLength = function(){
     var self = this;
-    $(self.target).each(function(){
-      var $panel = $('<div><span class="input">0</span> / <span class="limit">'+self.limit+'</span></div>');
+    $(self.limit).each(function(){
+      var $panel = $('<div><span class="input">0</span> / <span class="limit">'+self.limitNum+'</span></div>');
       $panel.css({
         display:"inline-block",
         position:"absolute",
@@ -84,7 +87,7 @@
        var $panel = $target.next();
        var length = $target.val().length;
        $panel.children(".input").text(length);
-       if( length > self.limit ){
+       if( length > self.limitNum ){
         $panel.css("color","red");
        }else{
         $panel.css("color","");
@@ -93,10 +96,11 @@
     });
   }
 	$(function() {
-		var util = new TextBoxUtility(".isLimit");
+		var util = new TextBoxUtility({
+		  "use"   :"aaaa"
+		});
 		util.checkLength();
-		var textUtil = new TextBoxUtility(".editableText");
-		textUtil.editable();
+		util.editable();
 		
 		//文字に変更があった時に最大文字数を取得する。
 		$(".test").bind("keydown keypress change",function() {
