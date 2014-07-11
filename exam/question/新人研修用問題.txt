@@ -1,0 +1,57 @@
+問８．問７と処理内容は全く同じことを行っています
+	問7と異なる点を選択してください
+
+class Question8 {
+	public static void main(String[] args) {
+	int a = 10;
+	int b = 20;
+		Sum sum = new Sum();
+		int result =sum(a,b);
+		System.out.println(result);
+	}
+}
+
+class Sum {
+	public int sum(int a, int b) {
+		int sum = 0;
+		sum = a + b;
+		return sum;
+	}
+}
+
+
+1.Sumクラスのインスタンスを生成している。
+2.sumを初期化している。
+3.Sumクラスを継承している。
+4.なにも変わっていない。
+
+問９．この中でエラーの原因となる部分が１つ存在します。
+	それはどれでしょうか
+Question9.java
+public static void main(String[] args) {
+  AAA a1 = new AAA();
+  AAA a2 = new BBB();
+  BBB b1 = new BBB();
+}
+Question9a.java
+class AAA {
+	public void aaa() {
+		System.out.println("あいうえお");
+	}
+}
+Question9b.java
+class BBB extends AAA{
+
+	public void aaa() {
+		System.out.println("かきくけこ");
+	}
+	public void bbb() {
+		System.out.println("さしすせそ");
+	}
+}
+
+1.a1.aaa();
+2.a2.aaa();
+3.a2.bbb();
+4.b1.aaa();
+

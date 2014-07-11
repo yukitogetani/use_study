@@ -15,7 +15,7 @@
 
 <p>　</p>
 
-<p>問について１～を塗りつぶして回答してください。</p>
+<p>問について１～4のうち１つを選択して回答してください。</p>
 
 <p>　</p>
 
@@ -99,8 +99,10 @@
 </xforms:select1>
 <xforms:select1 sqs:class="age" sqs:cols="4">
 
-<xforms:hint>System.out.println("あいうえおか"+"きくけこ");　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
-処理結果を選択してください。</xforms:hint> 	
+<xforms:hint>System.out.println("あいうえおか"+"きくけこ");　　　　　　　　　　　　　　　　　　　
+
+<br/>処理結果を選択してください。
+</xforms:hint> 	
 
 <xforms:item sqs:class="20-29" sqs:colspan="1">
   <xforms:label>あいうえおかきくけこ</xforms:label>
@@ -130,12 +132,10 @@
 <xforms:select1 sqs:class="age" sqs:cols="4">
 
 <xforms:hint>int a = 0;
-nt count = 99;
-for(int i = 0; i &lt;= count; i++) {
-a = a + 1;
-}
-System.out.println(a);
-この処理の出力結果を回答してください。</xforms:hint> 	
+<br/>int count = 99;
+<br/>int count = 99;
+<br/>for(int i = 0; i &lt;= count; i++)　 {<br/>　a = a + 1;
+<br/>}<br/>System.out.println(a);<br/>この処理の出力結果を選択してください。</xforms:hint> 	
 
 <xforms:item sqs:class="20-29" sqs:colspan="1">
   <xforms:label>100</xforms:label>
@@ -164,16 +164,7 @@ System.out.println(a);
 </xforms:select1>
 <xforms:select1 sqs:class="age" sqs:cols="4">
 
-<xforms:hint>		if( a &gt;= 10 ) {
-			if( b &lt;= 30 ) {
-				System.out.println("あいうえお");
-			} else {
-				System.out.println("かきくけこ");
-			} 
-		} else {
-			System.out.println("さしすせそ");
-		}
-この処理の出力結果を回答してください。</xforms:hint> 	
+<xforms:hint>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {<br/>if( a &gt;= 10 ) {</xforms:hint> 	
 
 <xforms:item sqs:class="20-29" sqs:colspan="1">
   <xforms:label>あいうえお</xforms:label>
@@ -242,7 +233,8 @@ System.out.println(a);
 </xforms:select1>
 <xforms:select1 sqs:class="age" sqs:cols="4">
 
-<xforms:hint>	public static void main(String[] args) {
+<xforms:hint>Question7.java	
+public static void main(String[] args) {
 		int a = 10;
 		int b = 20;
 		sum(a,b);
@@ -281,83 +273,15 @@ System.out.println(a);
 
 <p>　</p>
 
-<xforms:select1 sqs:cols="1">
-
-<xforms:hint>【単一選択設問】□□□□□についてお伺いします。以下の項目から、あなたの考えに合うものを１つ選んでください。（１つにマーク）
-</xforms:hint>
-
-<xforms:item>
-  <xforms:label>□□が、△△△△△△△△をすること1</xforms:label>
-  <xforms:value>1</xforms:value>
-</xforms:item>	
-
-<xforms:item>
-  <xforms:label>□□が、△△△△△△△△をすること2</xforms:label>
-  <xforms:value>2</xforms:value>
-</xforms:item>	
-
-<xforms:item>
-  <xforms:label>□□が、△△△△△△△△をすること3</xforms:label>
-  <xforms:value>3</xforms:value>
-</xforms:item>	
-
-<xforms:item>
-  <xforms:label>□□が、△△△△△△△△をすること4</xforms:label>
-  <xforms:value>4</xforms:value>
-</xforms:item>
-
-<xforms:item>
-  <xforms:label>□□が、△△△△△△△△をすること5</xforms:label>
-  <xforms:value>5</xforms:value>
-</xforms:item>
-
-
-<xforms:item>
-  <xforms:label>□□が、△△△△△△△△をすること6</xforms:label>
-  <xforms:value>6</xforms:value>
-</xforms:item>
-
-</xforms:select1>
-
-<p>　</p>
-
-<xforms:select sqs:cols="8">
-
-<xforms:hint>【複数選択設問】お子さんが通う学校は？（複数回答可）
-</xforms:hint>
-
-<xforms:item>
-  <xforms:label>小学校</xforms:label>
-  <xforms:value>1</xforms:value>
-</xforms:item>	
-
-<xforms:item>
-  <xforms:label>中学校</xforms:label>
-  <xforms:value>2</xforms:value>
-</xforms:item>	
-
-<xforms:item>
-  <xforms:label>高校</xforms:label>
-  <xforms:value>3</xforms:value>
-</xforms:item>	
-
-<xforms:item>
-  <xforms:label>専門学校・予備校</xforms:label>
-  <xforms:value>4</xforms:value>
-</xforms:item>
-
-<xforms:item>
-  <xforms:label>大学</xforms:label>
-  <xforms:value>5</xforms:value>
-</xforms:item>	
-
-</xforms:select>
 
 
 <p>　</p>
-<xforms:textarea sqs:height="130" sqs:width="450">
-<xforms:hint>【自由記述設問】□□□に関してご意見・ご感想がございましたら、ご記入ください</xforms:hint>
-</xforms:textarea>
+
+
+
+
+<p>　</p>
+
 
 
 </body>
