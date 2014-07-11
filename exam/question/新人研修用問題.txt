@@ -1,4 +1,4 @@
-問８．問７と処理内容は全く同じことを行っています
+問8．問７と処理内容は全く同じことを行っています
 	問7と異なる点を選択してください
 
 class Question8 {
@@ -25,7 +25,15 @@ class Sum {
 3.Sumクラスを継承している。
 4.なにも変わっていない。
 
-問９．この中でエラーの原因となる部分が１つ存在します。
+問9.extends クラス名　と記述すると何ができるのか選択してください。
+1.エラーの処理をextends先にまかせることができる。
+2.引数の数や型が合わないとき、それに対応した処理を行う。
+3.extends先の処理を上書きして新しい処理を行える。
+4.extends先のフィールドやメソッドを使用することがきでる。
+
+
+
+問10．この中でエラーの原因となる部分が１つ存在します。
 	それはどれでしょうか
 Question9.java
 public static void main(String[] args) {
@@ -54,4 +62,117 @@ class BBB extends AAA{
 2.a2.aaa();
 3.a2.bbb();
 4.b1.aaa();
+
+問11．SQL文とはなんでしょうか選択してください
+1,データベースに接続するためのもの
+2,データベースを操作するためのもの
+3,データベースを作るためだけのもの
+4,データベースの情報を自動整備するもの
+
+INSERT　INTO,UPDATE　SET,DELETE FROM,SELECT　FROM,
+どれがどの操作を行うか選択してください。
+
+問12,INSERT　INTO
+1.更新
+2.登録
+3.削除
+4.検索
+
+問13,UPDATE　SET
+1.更新
+2.登録
+3.削除
+4.検索
+
+問14,DELETE FROM
+1.更新
+2.登録
+3.削除
+4.検索
+
+問15,SELECT FROM
+1.更新
+2.登録
+3.削除
+4.検索
+
+問16.DAOクラスの説明で間違っているものを選択してください
+1.データベースに接続するだけのために必要
+2.データベースとjavaプログラムの仲介役となるもの
+3.データベースに接続する際にはJDBCドライバが必要
+4.データベースに接続するにはDAOクラスは必ず作成しなければならない
+
+問17．DAOクラスがあることでどんなメリットが存在するか選択してください。
+1.DAOによってデータベースから得た情報を格納できるようになる
+2.データベースに接続という役割を与えデータの処理との役割分担が可能に
+3.SQL文を記述しなくてもデータベースへの処理が可能となる
+4.DAOクラスは作成しなければならずとくにメリットはない
+
+問18．	public static void main(String[] args) {
+		int a = 15;
+		if( a >= 10 ) {
+			int b = 10;
+		}
+		System.out.println(b);
+	}
+この処理の出力結果を選択してください。
+1.b
+2.10
+3.0
+4.なにも表示されない
+
+問19.
+class Question19 {
+	int a ;
+	
+	public Question19(int a) {
+		this.a = a;	
+	}
+	public int sum() {
+		a = a + 10;
+		return a;
+	}
+	public static void main(String[] args) {
+		Question19 que = new Question19(100);
+		int a = que.sum();
+		System.out.println(a);
+	}
+}
+この処理の出力結果を選択してください。
+1.100
+2.10
+3.110
+4.なにも表示されない
+
+問20．
+class Question20 {
+	int a ;
+	
+	public Question20(int a) {
+		this.a = a;
+	}
+	public Question20() {
+		this.a = 200;
+	}
+	public int sum() {
+		a = a + 10;
+		return a;
+	}
+	public static void main(String[] args) {
+		Question20 que = new Question20();
+		int a = que.sum();
+		System.out.println(a);
+	}
+}
+この処理の出力結果を選択してください。
+1.210
+2.200
+3.100
+4.110
+
+問21．HTMLの構成で正しくないものを選択してください。
+1.HTMLは基本的にタグを使用して記述する
+2.HTMLは主に画面表示のプログラムを作成する際に使用される
+3.終了タグ（</div>など）は必ず開始タグを作成したら作らなければならない
+4.HTMLでjavaの処理をすることができる。
 
